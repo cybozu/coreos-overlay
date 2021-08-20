@@ -17,8 +17,8 @@ S="${WORKDIR}"
 
 # The install-nvidia script is using emerge-gitclone, but this script is only
 # invoked within the developer container, so we don't need to add the
-# coreos-base/gmerge package here. All the dependencies below come from the
-# setup-nvidia script, which is run on the host.
+# coreos-base/emerge-gitclone package here. All the dependencies below come from
+# the setup-nvidia script, which is run on the host.
 RDEPEND="
 app-arch/bzip2
 app-shells/bash
