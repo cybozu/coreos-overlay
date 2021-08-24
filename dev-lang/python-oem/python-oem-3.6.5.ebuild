@@ -91,6 +91,12 @@ src_configure() {
 		use hardened && replace-flags -O3 -O2
 	fi
 
+	if tc-is-cross-compiler; then
+		# Force some tests that try to poke fs paths.
+		export ac_cv_file__dev_ptc=no
+		export ac_cv_file__dev_ptmx=yes
+	fi
+
 	# Export CXX so it ends up in /usr/lib/python3.X/config/Makefile.
 	tc-export CXX
 
@@ -106,7 +112,7 @@ src_configure() {
 		--with-fpectl
 		--enable-shared
 		--enable-ipv6
-		--enable-threads
+		--with-threads
 		--includedir='/discard/include'
 		--infodir='/discard/info'
 		--mandir='/discard/man'

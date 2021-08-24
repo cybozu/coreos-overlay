@@ -28,6 +28,11 @@ Modifications made:
 - set mandir, infodir and includedir to some subdirectory of /discard,
   so during installation this could be easily removed
 
+- export some configure variables for the cross-compilation:
+  ac_cv_file__dev_ptc and ac_cv_file__dev_ptmx. If not done, build
+  will fail with a message saying that these should be set to either
+  yes or no.
+
 - simplify src_install:
 
   - replace the hardcoded ${ED}/usr/bin with bindir variable set to
