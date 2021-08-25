@@ -156,5 +156,5 @@ src_install() {
 
 	rm "${libdir}/distutils/command/"wininst-*.exe || die
 
-	rm "${ED}/discard" || die
+	rm -r "${ED}/discard" || die
 }
